@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <title>sign up form</title>
+</head>
+
+<body>
+    <section class="signup section" id="signup">
+        <div class="signup__container container">
+
+            <form action="signup.php" method="POST" class="signup__form">
+                <h2 class="section__title">Sign Up</h2>
+                <div class="signup__group">
+                    <label for="signup-name" class="signup__label">Full Name</label>
+                    <input type="text" name="fullname" id="signup-name" class="signup__input" placeholder="Enter your full name" required>
+                </div>
+                <div class="signup__group">
+                    <label for="signup-email" class="signup__label">Email</label>
+                    <input type="email" name="email" id="signup-email" class="signup__input" placeholder="Enter your email" required>
+                </div>
+                <div class="signup__group">
+                    <label for="signup-password" class="signup__label">Password</label>
+                    <input type="password" name="password" id="signup-password" class="signup__input" placeholder="Enter your password" required>
+                </div>
+                <div class="signup__group">
+                    <label for="signup-confirm-password" class="signup__label">Confirm Password</label>
+                    <input type="password" name="confirm_password" id="signup-confirm-password" class="signup__input" placeholder="Confirm your password" required>
+                </div>
+                <span class="signup__login">
+        Already have an account? <a href="#login-content" onclick="showLogin()">Log In</a>
+    </span>
+                <button type="submit" class="signup__button button">Sign Up</button>
+            </form>
+
+        </div>
+        <i class="signup__close" onclick="hideSignup()">x</i>
+    </section>
+
+</body>
+
+</html>
