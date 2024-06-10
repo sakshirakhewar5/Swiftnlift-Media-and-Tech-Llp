@@ -1,0 +1,1014 @@
+        /*=============== GOOGLE FONTS ===============*/
+        
+        @import url("https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Montserrat:wght@400;500;600&display=swap");
+        /*=============== VARIABLES CSS ===============*/
+        
+         :root {
+            --header-height: 3.5rem;
+            /*========== Colors ==========*/
+            /*Color mode HSL(hue, saturation, lightness)*/
+            --first-color: hsl(230, 62%, 56%);
+            --title-color: hsl(230, 70%, 16%);
+            --text-color: hsl(230, 16%, 45%);
+            --border-color: hsl(230, 50%, 90%);
+            --white-color: hsl(0, 0%, 100%);
+            --body-color: hsl(230, 100%, 96%);
+            --container-color: hsl(230, 100%, 97%);
+            /*========== Font and typography ==========*/
+            /*.5rem = 8px | 1rem = 16px ...*/
+            --body-font: "Montserrat", sans-serif;
+            --second-font: "Montagu Slab", serif;
+            --biggest-font-size: 2rem;
+            --h1-font-size: 1.5rem;
+            --h2-font-size: 1.25rem;
+            --h3-font-size: 1rem;
+            --normal-font-size: .938rem;
+            --small-font-size: .813rem;
+            --smaller-font-size: .75rem;
+            /*========== Font weight ==========*/
+            --font-regular: 400;
+            --font-medium: 500;
+            --font-semi-bold: 600;
+            /*========== z index ==========*/
+            --z-tooltip: 10;
+            --z-fixed: 100;
+        }
+        /*========== Responsive typography ==========*/
+        
+        @media screen and (min-width: 1150px) {
+             :root {
+                --biggest-font-size: 3.5rem;
+                --h1-font-size: 2.25rem;
+                --h2-font-size: 1.5rem;
+                --h3-font-size: 1.25rem;
+                --normal-font-size: 1rem;
+                --small-font-size: .875rem;
+                --smaller-font-size: .813rem;
+            }
+        }
+        /*=============== BASE ===============*/
+        
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body,
+        input,
+        button {
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+        }
+        
+        body {
+            background-color: var(--body-color);
+            color: var(--text-color);
+            transition: background-color .4s;
+        }
+        
+        input,
+        button {
+            border: none;
+            outline: none;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: var(--title-color);
+            font-family: var(--second-font);
+            font-weight: var(--font-medium);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        /*=============== THEME ===============*/
+        /*========== Variables Dark theme ==========*/
+        /*========== 
+	Color changes in some parts of 
+	the website, in dark theme
+==========*/
+        /*=============== REUSABLE CSS CLASSES ===============*/
+        
+        .container {
+            max-width: 1220px;
+            margin-inline: 4.5rem;
+        }
+        
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .section {
+            padding-block: 5rem 1rem;
+        }
+        
+        .section__title {
+            text-align: center;
+            font-size: var(--h1-font-size);
+            font-family: var(--second-font);
+            margin-bottom: 2rem;
+        }
+        
+        .main {
+            overflow: hidden;
+            /* For animation ScrollReveal */
+        }
+        /*=============== HEADER & NAV ===============*/
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 103%;
+            background-color: var(--body-color);
+            z-index: var(--z-fixed);
+            transition: box-shadow .4s, bacground-color .4s;
+        }
+        
+        .nav {
+            height: var(--header-height);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+            background-color: var(--container-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav__logo {
+            display: inline-flex;
+            align-items: center;
+            column-gap: .5rem;
+            color: var(--first-color);
+            font-weight: var(--font-medium);
+        }
+        
+        .nav__logo i {
+            font-size: 1rem;
+        }
+        /* Navigation menu styles */
+        
+        .nav__menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            /* Space between nav items */
+        }
+        
+        .nav__list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            /* Space between nav items */
+        }
+        
+        .nav__link {
+            color: black;
+            text-decoration: none;
+            transition: color .4s;
+            padding: 0.5rem 1rem;
+            /* Space around each nav link */
+        }
+        
+        .nav__link:hover {
+            color: var(--first-color);
+        }
+        
+        .nav__actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .nav__actions i {
+            font-size: 1.25rem;
+            color: var(--title-color);
+            cursor: pointer;
+            transition: color .4s;
+        }
+        
+        .nav__actions i:hover {
+            color: var(--first-color);
+        }
+        /* Navigation for mobile devices */
+        
+        @media screen and (max-width: 1150px) {
+            .nav__link {
+                padding: 0;
+            }
+        }
+        /* For phone screens */
+        
+        @media screen and (max-width: 480px) {
+            .nav__menu {
+                flex-direction: column;
+                align-items: flex-start;
+                /* Align items to the start */
+            }
+            .nav__list {
+                flex-direction: column;
+            }
+            .nav__link {
+                padding: 0;
+                /* Add padding to each nav link */
+                text-align: center;
+                /* Center-align the text */
+            }
+            .nav__actions {
+                justify-content: center;
+                /* Center-align the actions */
+            }
+        }
+        /* Add shadow header */
+        
+        .shadow-header {
+            box-shadow: 0 2px 16px hsla(0, 0%, 0%, .1);
+        }
+        /* Active link */
+        /*=============== SEARCH ===============*/
+        
+        .search {
+            position: fixed;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: var(--z-fixed);
+            background-color: hsl(230, 12%, 96%, .6);
+            backdrop-filter: blur(16px);
+            padding: 8rem 1.5rem;
+            transition: top .4s;
+        }
+        
+        .search__form {
+            display: flex;
+            align-items: center;
+            column-gap: .5rem;
+            background-color: var(--container-color);
+            border: 2px solid var(--border-color);
+            padding-inline: 1rem;
+        }
+        
+        .search_icon {
+            font-size: 1.25rem;
+            color: var(--title-color);
+        }
+        
+        .search__input {
+            width: 100%;
+            padding-block: 1rem;
+            background-color: var(--container-color);
+            color: var(--text-color);
+        }
+        
+        .search__close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 2rem;
+            color: var(--title-color);
+            cursor: pointer;
+        }
+        /* Show search */
+        
+        .show-search {
+            top: 0;
+        }
+        /*=============== LOGIN ===============*/
+        /* General form styling */
+        
+        .grid {
+            display: grid;
+            gap: 1rem;
+        }
+        /* Login Form Styles */
+        
+        .login {
+            position: fixed;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: var(--z-fixed);
+            background-color: hsla(230, 12%, 96%, .6);
+            backdrop-filter: blur(16px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            text-align: center;
+            transition: top .4s;
+        }
+        
+        .login__form {
+            background-color: var(--container-color);
+            padding: 2rem 1.5rem;
+            border: 2px solid var(--border-color);
+            row-gap: 1.25rem;
+            width: 500px;
+        }
+        
+        .login__title {
+            font-size: var(--h2-font-size);
+        }
+        
+        .login__group {
+            row-gap: 1.25rem;
+        }
+        
+        .login__label {
+            display: block;
+            text-align: initial;
+            color: var(--title-color);
+            font-weight: var(--font-medium);
+            margin-bottom: .25rem;
+        }
+        
+        .login__input {
+            width: 100%;
+            background-color: var(--container-color);
+            border: 2px solid var(--border-color);
+            padding: 1rem;
+            color: var(--text-color);
+        }
+        
+        .login__signup,
+        .login__forget {
+            display: block;
+            font-size: var(--small-font-size);
+        }
+        
+        .login__signup {
+            margin-bottom: .5rem;
+        }
+        
+        .login__signup a {
+            color: var(--first-color);
+            font-weight: var(--font-medium);
+        }
+        
+        .login__forget {
+            color: var(--first-color);
+            margin-bottom: 1.25rem;
+        }
+        
+        .login__button {
+            width: 100%;
+            cursor: pointer;
+        }
+        
+        .login__close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 2rem;
+            color: var(--title-color);
+            cursor: pointer;
+        }
+        /* Show login */
+        
+        .show-login {
+            top: 0;
+        }
+        /*+++++++++++++  sign up+++++++++++++*/
+        /* Sign Up Form Styles (reusing login styles) */
+        
+        .signup {
+            position: fixed;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: var(--z-fixed);
+            background-color: hsla(230, 12%, 96%, .6);
+            backdrop-filter: blur(16px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            text-align: center;
+            transition: top .4s;
+        }
+        
+        .signup__form {
+            background-color: var(--container-color);
+            padding: 2rem 1.5rem;
+            border: 2px solid var(--border-color);
+            row-gap: 1.25rem;
+            width: 500px;
+        }
+        
+        .signup__title {
+            font-size: var(--h2-font-size);
+        }
+        
+        .signup__group {
+            row-gap: 1.25rem;
+        }
+        
+        .signup__label {
+            display: block;
+            text-align: initial;
+            color: var(--title-color);
+            font-weight: var(--font-medium);
+            margin-bottom: .25rem;
+        }
+        
+        .signup__input {
+            width: 100%;
+            background-color: var(--container-color);
+            border: 2px solid var(--border-color);
+            padding: 1rem;
+            color: var(--text-color);
+        }
+        
+        .signup__login {
+            display: block;
+            font-size: var(--small-font-size);
+            margin-bottom: .5rem;
+        }
+        
+        .signup__login a {
+            color: var(--first-color);
+            font-weight: var(--font-medium);
+        }
+        
+        .signup__button {
+            width: 100%;
+            cursor: pointer;
+        }
+        
+        .signup__close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 2rem;
+            color: var(--title-color);
+            cursor: pointer;
+        }
+        /* Show sign up */
+        
+        .show-signup {
+            top: 0;
+        }
+        /* Additional CSS variables (if not already defined) */
+        
+         :root {
+            --z-fixed: 1000;
+            --container-color: #fff;
+            --border-color: #e3e3e3;
+            --title-color: #333;
+            --text-color: #666;
+            --first-color: #007bff;
+            --font-medium: 500;
+            --h2-font-size: 1.5rem;
+            --small-font-size: .875rem;
+        }
+        /*=============== HOME ===============*/
+        
+        .home__swiper {
+            margin: initial;
+        }
+        
+        .home__container {
+            padding-top: 2rem;
+            row-gap: 2.5rem;
+        }
+        
+        .home__data {
+            text-align: center;
+        }
+        
+        .home__title {
+            font-size: 35px;
+            margin-bottom: 1rem;
+        }
+        
+        .home__description {
+            margin-bottom: 2rem;
+        }
+        
+        .home__images {
+            display: grid;
+        }
+        
+        .home__article,
+        .home__img {
+            width: 220px;
+            transition: scale .4s;
+        }
+        
+        .home__article {
+            scale: .8;
+        }
+        /* Swiper class */
+        
+        .swiper-slide-active,
+        .swiper-slide-duplicate-active {
+            scale: 1;
+        }
+        /*=============== BUTTON ===============*/
+        
+        .button {
+            display: inline-block;
+            background-color: var(--first-color);
+            color: var(--white-color);
+            font-weight: var(--font-semi-bold);
+            padding: 1rem 1.5rem;
+            transition: box-shadow .4s;
+        }
+        
+        .button:hover {
+            box-shadow: 0 4px 32px hsl(230, 72%, 32%, .4);
+        }
+        /*=============== SERVICES ===============*/
+        /*=============== Blogs ===============*/
+        
+        .featured__card {
+            position: relative;
+            text-align: center;
+            background-color: var(--container-color);
+            padding: 2rem;
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+            transition: border .4s, background-color .4s;
+        }
+        
+        .featured__img {
+            width: 150px;
+            margin: 0 auto .75rem;
+        }
+        
+        .featured__title {
+            font-size: var(--h2-font-size);
+            margin-bottom: .5rem;
+        }
+        
+        .featured__description {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: .75rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        .featured__card .button {
+            cursor: pointer;
+        }
+        
+        .featured__actions {
+            display: inline-flex;
+            flex-direction: column;
+            row-gap: .75rem;
+            position: absolute;
+            top: 2rem;
+            right: -1.5rem;
+            transition: right .4s;
+        }
+        
+        .featured__actions button {
+            background-color: none;
+            font-size: 1.25rem;
+            color: var(--first-color);
+            cursor: pointer;
+        }
+        
+        .featured__card:hover .featured__actions {
+            right: 1.5rem;
+        }
+        /* Swiper class */
+        
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            content: '';
+        }
+        
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: initial;
+            height: initial;
+            background-color: var(--container-color);
+            border: 2px solid var(--border-color);
+            padding: .5rem;
+            font-size: 1.5rem;
+            color: var(--first-color);
+            transition: border .4s bacground-color .4s;
+        }
+        /*=============== DISCOUNT ===============*/
+        /*=============== NEW ===============*/
+        
+        .magazine-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        
+        .magazine-item {
+            width: calc(33.33% - 20px);
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .magazine-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .magazine-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .magazine-content {
+            padding: 20px;
+        }
+        
+        .magazine-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .magazine-description {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .read-more {
+            display: block;
+            text-align: center;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .read-more:hover {
+            background-color: #0056b3;
+        }
+        /* Slide effect for medium and small screens */
+        
+        @media screen and (max-width: 992px) {
+            .magazine-box {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+            }
+            .magazine-item {
+                flex: 0 0 auto;
+                scroll-snap-align: start;
+                margin-right: 20px;
+                width: calc(100% - 20px);
+            }
+        }
+        /*=============== JOIN ===============*/
+        
+        .contact {
+            padding: 6rem 0;
+            text-align: center;
+            display: flex;
+            justify-content: flex-start;
+            /* Align items to the start (left side) */
+            align-items: center;
+            /* Center align items vertically */
+            height: 100vh;
+            /* Ensure the contact section takes the full viewport height */
+        }
+        
+        .contact form {
+            max-width: 35rem;
+            margin: 0 5rem;
+            /* Adjust margin to add some space on the sides */
+            padding: 2rem;
+            background: var(--bg-color);
+            border-radius: 1rem;
+            box-shadow: 0 .2rem .5rem var(--shadow-color);
+            border: 2px solid var(--border-color);
+            text-align: left;
+            /* Ensure text aligns to the left */
+        }
+        
+        .contact form .input-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .contact form .input-box input,
+        .contact form textarea {
+            width: 110%;
+            padding: 1rem;
+            font-size: 1rem;
+            color: var(--text-color);
+            background: var(--white-color);
+            border-radius: .9rem;
+            margin: .7rem 0;
+            box-shadow: 0 .1rem .5rem var(--shadow-color);
+            border: .1rem solid var(--main-color);
+            transition: .3s ease;
+        }
+        
+        .contact form .input-box input {
+            width: calc(50% - 1rem);
+        }
+        
+        .contact form textarea {
+            width: calc(105% - 2rem);
+            padding: .8rem;
+            resize: none;
+        }
+        
+        .contact form .input-box input:focus,
+        .contact form textarea:focus {
+            border-color: var(--main-color);
+            box-shadow: 0 0 .5rem var(--main-color);
+        }
+        
+        .contact form .btn-container {
+            display: flex;
+            justify-content: center;
+            /* Center the button */
+            margin-top: 1rem;
+            /* Add some margin to the top */
+        }
+        
+        .contact form .btn {
+            background-color: var(--first-color);
+            color: var(--white-color);
+            font-weight: var(--font-semi-bold);
+            padding: 1rem 10rem;
+            transition: box-shadow .4s;
+            cursor: pointer;
+            /* Add a pointer cursor for better UX */
+        }
+        
+        .contact form .btn:hover {
+            box-shadow: 0 4px 32px hsl(230, 72%, 32%, .4);
+        }
+        
+        @media (max-width: 768px) {
+            .contact {
+                justify-content: center;
+                /* Center the form on smaller screens */
+            }
+            .contact form .input-box input {
+                width: 100%;
+            }
+        }
+        /*=============== TESTIMONIAL ===============*/
+        
+        .video-section {
+            width: 38%;
+            height: 50%;
+            display: flex;
+            align-items: flex-start;
+            /* Align the video to the start of the container */
+            justify-content: center;
+            /* Center the video horizontally */
+        }
+        
+        .video-section iframe {
+            width: 120%;
+            height: 150%;
+            /* Set height to 50% of the container */
+        }
+        /*=============== FOOTER ===============*/
+        /* CSS for phone view contact form */
+        
+        @media (max-width: 768px) {
+            .contact form {
+                max-width: 90%;
+                margin: 0 auto;
+                padding: 1rem;
+                /* Add padding to the form */
+                border-radius: 0.5rem;
+                /* Adjust border radius */
+            }
+            .contact form .input-box {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .contact form .input-box input,
+            .contact form textarea {
+                width: 100%;
+                margin: 0;
+            }
+            .contact form .btn-container {
+                margin-top: 1rem;
+                display: flex;
+                justify-content: center;
+            }
+            .contact form .btn {
+                padding: 1rem 5rem;
+                /* Maintain button size */
+            }
+        }
+        /* CSS for phone view video container */
+        
+        @media (max-width: 768px) {
+            .video-section {
+                width: 90%;
+                margin: 0 auto;
+                margin-top: 2rem;
+            }
+            .video-section iframe {
+                width: 100%;
+                height: auto;
+            }
+        }
+        /* Footer General Styles */
+        
+        .footer {
+            background-color: #222;
+            color: #fff;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-text,
+        .footer-address,
+        .footer-menu,
+        .footer-social {
+            flex: 1;
+            min-width: 200px;
+            margin: 1rem;
+        }
+        
+        .footer-text p,
+        .footer-address p {
+            margin: 0.5rem 0;
+        }
+        
+        .footer-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-menu li {
+            margin: 0.5rem 0;
+        }
+        
+        .footer-menu a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .footer-menu a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-social a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+        }
+        
+        .footer-social a:hover {
+            color: #f90;
+        }
+        
+        .footer h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .footer p {
+            margin: 0;
+        }
+        
+        .footer h3,
+        .footer p,
+        .footer a {
+            color: #fff;
+        }
+        
+        .footer a:hover {
+            color: #f90;
+        }
+        
+        .footer-copyright {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        /* Responsive Design */
+        
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            .footer-address,
+            .footer-menu {
+                text-align: left;
+            }
+        }
+        /*=============== SCROLL BAR ===============*/
+        
+        #profile-view {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #profile-view p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        #profile-view form {
+            margin-top: 10px;
+        }
+        
+        #profile-view button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        #profile-view button:hover {
+            background-color: #0056b3;
+        }
+        /* Styling for the profile icon */
+        
+        .ri-user-3-line.profile {
+            cursor: pointer;
+            font-size: 24px;
+            color: #007bff;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+        
+        .popup-message {
+            display: none;
+            position: fixed;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(76, 69, 69, 0.1);
+            z-index: 1000;
+        }
+        
+        .popup-message.success {
+            border-color: #4caf50;
+            color: #4caf50;
+        }
+        
+        .popup-message.error {
+            border-color: #f44336;
+            color: #f44336;
+        }
